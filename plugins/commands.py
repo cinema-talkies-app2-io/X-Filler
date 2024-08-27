@@ -209,43 +209,36 @@ async def start(client, message):
     data = message.command[1]
     if data.split("-", 1)[0] == "X":
         user_id = int(data.split("-", 1)[1])
-        vj = await referal_add_user(user_id, message.from_user.id)
-        if vj and PREMIUM_AND_REFERAL_MODE == True:
-            await message.reply(f"<b>You have joined using the referral link of user with ID {user_id}\n\nSend /start again to use the bot</b>")
-            num_referrals = await get_referal_users_count(user_id)
-            await client.send_message(chat_id = user_id, text = "<b>{} start the bot with your referral link\n\nTotal Referals - {}</b>".format(message.from_user.mention, num_referrals))
-            if num_referrals == REFERAL_COUNT:
-                time = REFERAL_PREMEIUM_TIME       
-                seconds = await get_seconds(time)
-                if seconds > 0:
-                    expiry_time = datetime.datetime.now() + datetime.timedelta(seconds=seconds)
-                    user_data = {"id": user_id, "expiry_time": expiry_time} 
-                    await db.update_user(user_data)  # Use the update_user method to update or insert user data
-                    await delete_all_referal_users(user_id)
-                    await client.send_message(chat_id = user_id, text = "<b>You Have Successfully Completed Total Referal.\n\nYou Added In Premium For {}</b>".format(REFERAL_PREMEIUM_TIME))
-                    return 
+
+    # Check if the referring user is already in the database
+        user_exists = await db.is_userz_exist(user_id)
+    
+        if user_exists:
+        # Notify the user that they have already referred
+            await message.reply("<b>You have already registered </b>")
         else:
-            if PREMIUM_AND_REFERAL_MODE == True:
-                buttons = [[
-                    
-                    InlineKeyboardButton('✇ Jᴏɪɴ Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ ✇', url=CHNL_LNK)
-                ]]
-            else:
-                buttons = [[
-                    
-                    InlineKeyboardButton('✇ JᴏɪɴUᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ ✇', url=CHNL_LNK)
-                ]]
-            reply_markup = InlineKeyboardMarkup(buttons)
-            m=await message.reply_sticker("CAACAgUAAxkBAAIGBGaIQ3GTvjPRwI1B_lFMKU-SFBSqAAIhAAPBJDExrJTo8r6ffCUeBA") 
-            await asyncio.sleep(1)
-            await m.delete()
-            await message.reply_photo(
-                photo=random.choice(PICS),
-                caption=script.START_TXT.format(message.from_user.mention, temp.U_NAME, temp.B_NAME),
-                reply_markup=reply_markup,
-                parse_mode=enums.ParseMode.HTML
-            )
-            return 
+        # Process the referral
+            vj = await referal_add_user(user_id, message.from_user.id)
+        
+            if vj and PREMIUM_AND_REFERAL_MODE == True:
+                await message.reply(f"<b>You have joined using the referral link of user with ID {user_id}\n\nSend /start again to use the bot</b>")
+                await db.add_userz(message.from_user.id, message.from_user.first_name)
+                num_referrals = await get_referal_users_count(user_id)
+                await client.send_message(chat_id=user_id, text=f"<b>{message.from_user.mention} started the bot with your referral link\n\nTotal Referrals - {num_referrals}</b>")
+            
+                if num_referrals == REFERAL_COUNT:
+                    time = REFERAL_PREMEIUM_TIME
+                    seconds = await get_seconds(time)
+                
+                    if seconds > 0:
+                        expiry_time = datetime.datetime.now() + datetime.timedelta(seconds=seconds)
+                        user_data = {"id": user_id, "expiry_time": expiry_time}
+                        await db.update_user(user_data)  # Use the update_user method to update or insert user data
+                        await delete_all_referal_users(user_id)
+                        await client.send_message(chat_id=user_id, text=f"<b>You Have Successfully Completed Total Referral.\n\nYou Are Added To Premium For {REFERAL_PREMEIUM_TIME}</b>")
+                        return
+
+        
     try:
         pre, file_id = data.split('_', 1)
     except:
