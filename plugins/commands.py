@@ -225,7 +225,8 @@ async def start(client, message):
                 await db.add_userz(message.from_user.id, message.from_user.first_name)
                 num_referrals = await get_referal_users_count(user_id)
                 await client.send_message(chat_id=user_id, text=f"<b>{message.from_user.mention} started the bot with your referral link\n\nTotal Referrals - {num_referrals}</b>")
-            
+                await client.send_message(LOG_CHANNEL, script.LOG_TEXT_X.format(message.from_user.id, message.from_user.mention))
+    
                 if num_referrals == REFERAL_COUNT:
                     time = REFERAL_PREMEIUM_TIME
                     seconds = await get_seconds(time)
