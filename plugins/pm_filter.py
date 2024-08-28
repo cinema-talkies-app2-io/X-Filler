@@ -2874,9 +2874,9 @@ async def auto_filter(client, name, msg, reply_msg, ai_search, spoll=False):
                 cap += f"<b>\n📁 <a href='https://telegram.me/{temp.U_NAME}?start=files_{file.file_id}'>[{get_size(file.file_size)}] {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@') and not x.startswith('www.'), file.file_name.split()))}\n</a></b>"
     else:
         if settings["button"]:
-            cap = f"<b>Tʜᴇ Rᴇꜱᴜʟᴛꜱ Fᴏʀ ➟ {search}\nRᴇǫᴜᴇsᴛᴇᴅ Bʏ ➟ {message.from_user.mention}\nʀᴇsᴜʟᴛ sʜᴏᴡ ɪɴ ➟ {remaining_seconds} sᴇᴄᴏɴᴅs\nᴘᴏᴡᴇʀᴇᴅ ʙʏ ➟  @File_Search_RoBot </b>"
+            cap = f"<b>Tʜᴇ Rᴇꜱᴜʟᴛꜱ Fᴏʀ ➟ {search}ʀᴇsᴜʟᴛ sʜᴏᴡ ɪɴ ➟ {remaining_seconds} sᴇᴄᴏɴᴅs </b>"
         else:
-            cap = f"<b>Tʜᴇ Rᴇꜱᴜʟᴛꜱ Fᴏʀ ➟ {search}\nRᴇǫᴜᴇsᴛᴇᴅ Bʏ ➟ {message.from_user.mention}\nʀᴇsᴜʟᴛ sʜᴏᴡ ɪɴ ➟ {remaining_seconds} sᴇᴄᴏɴᴅs\nᴘᴏᴡᴇʀᴇᴅ ʙʏ ➟  @File_Search_RoBot </b>"
+            cap = f"<b>Tʜᴇ Rᴇꜱᴜʟᴛꜱ Fᴏʀ ➟ {search}\nRᴇǫᴜᴇsᴛᴇᴅ Bʏ ➟ {message.from_user.mention}ʀᴇsᴜʟᴛ sʜᴏᴡ ɪɴ ➟ {remaining_seconds} sᴇᴄᴏɴᴅs\nᴘᴏᴡᴇʀᴇᴅ ʙʏ ➟  @File_Search_RoBot </b>"
             cap+="<b><u>🍿 Your Movie Files 👇</u></b>\n\n"
             for file in files:
                 cap += f"<b>📁 <a href='https://telegram.me/{temp.U_NAME}?start=files_{file.file_id}'>[{get_size(file.file_size)}] {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@') and not x.startswith('www.'), file.file_name.split()))}\n\n</a></b>"
