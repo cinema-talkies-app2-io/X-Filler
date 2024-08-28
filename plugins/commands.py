@@ -530,7 +530,7 @@ async def start(client, message):
                 reply_markup=InlineKeyboardMarkup(button)
             )
             filesarr.append(msg)
-        await asyncio.sleep(3600)
+        await asyncio.sleep(604600)
         for x in filesarr:
             await x.delete()
         await k.edit_text("<b>Your All Files/Videos is successfully deleted!!!</b>")
@@ -618,7 +618,7 @@ async def start(client, message):
             btn = [[
                 InlineKeyboardButton("Get File Again", callback_data=f'delfile#{file_id}')
             ]]
-            await asyncio.sleep(600)
+            await asyncio.sleep(604800)
             await msg.delete()
 
             # Send a new message indicating the file is deleted
@@ -679,7 +679,7 @@ async def start(client, message):
     btn = [[
         InlineKeyboardButton("Get File Again", callback_data=f'delfile#{file_id}')
     ]]
-    await asyncio.sleep(600)
+    await asyncio.sleep(604800)
     await msg.delete()
     # Send a new message indicating the file is deleted
     await message.reply_text(
