@@ -10,12 +10,7 @@ class script(object):
     HELP_TXT = """<b>Hᴇʏ {}
 Hᴇʀᴇ Is Tʜᴇ Hᴇʟᴘ Fᴏʀ Mʏ Cᴏᴍᴍᴀɴᴅs.</b>"""
 
-    ABOUT_TXT = """<b><blockquote>⍟───[ MY ᴅᴇᴛᴀɪʟꜱ ]───⍟</blockquote>
-    
-‣ ᴍʏ ɴᴀᴍᴇ : <a href=https://t.me/{}>{}</a>
-‣ ᴍʏ ʙᴇsᴛ ғʀɪᴇɴᴅ : <a>Yᴏᴜ</a> 
-‣ Fᴏʀᴋᴇᴅ ғʀᴏᴍ : <a>ᴛᴇᴄʜ ᴠᴊ</a>
-‣ ʙᴜɪʟᴅ sᴛᴀᴛᴜs : ᴠ2.7.1 [sᴛᴀʙʟᴇ]></b>"""
+    ABOUT_TXT = """<b>Fᴏʀ ғᴜʟʟ ᴅᴇᴛᴀɪʟs /start ᴛʜᴇ ʙᴏᴛ</b>"""
 
     SUBSCRIPTION_TXT = """
 <b>Fᴏʀ ғᴜʟʟ ᴅᴇᴛᴀɪʟs /start ᴛʜᴇ ʙᴏᴛ
