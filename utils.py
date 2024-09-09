@@ -93,7 +93,7 @@ async def generate_referral_buttons(message, CHNL_LNK, PICS, script, temp):
 
     return
 
-from telegram.ext import CallbackQueryHandler
+#from telegram.ext import CallbackQueryHandler
 
 # Callback handler to listen for button clicks
 async def handle_callback(update, context):
