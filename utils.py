@@ -96,24 +96,7 @@ async def generate_referral_buttons(message, CHNL_LNK, PICS, script, temp):
 #from telegram.ext import CallbackQueryHandler
 
 # Callback handler to listen for button clicks
-async def handle_callback(update, context):
-    query = update.callback_query
-    await query.answer()
 
-    if query.data == "generate_referral_buttons":
-        message = query.message
-        
-        # Call your already defined CHNL_LNK and PICS
-        await generate_referral_buttons(
-            message=message, 
-            CHNL_LNK=CHNL_LNK,  # Use your existing CHNL_LNK variable
-            PICS=PICS,          # Use your existing PICS variable
-            script=script,      # Your script object
-            temp=temp           # Your temp object
-        )
-
-# Add the handler to the dispatcher
-dispatcher.add_handler(CallbackQueryHandler(handle_callback))
 
     
     
