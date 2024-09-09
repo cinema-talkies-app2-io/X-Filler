@@ -62,6 +62,39 @@ async def pub_is_subscribed(bot, query, channel):
             pass
     return btn
 
+
+
+# Function to generate referral buttons
+async def generate_referral_buttons(message, CHNL_LNK, PICS, script, temp):
+    user_id = message.from_user.id
+    ABCDE = "https://t.me/share/url?url=https://telegram.me/File_Search_RoBot?start=X-{}".format(user_id)
+    ABCD = "https://wa.me/?text=https://telegram.me/File_Search_RoBot?start=X-{}".format(user_id)
+    
+    # Referral buttons for WhatsApp and Telegram
+    buttons = [
+        [InlineKeyboardButton('💫 Rᴇғᴇʀ ᴏɴ WʜᴀᴛsAᴘᴘ 💫', url=ABCD)],
+        [InlineKeyboardButton('💫 Rᴇғᴇʀ ᴏɴ Tᴇʟᴇɢʀᴀᴍ 💫', url=ABCDE)]
+    ]
+
+    reply_markup = InlineKeyboardMarkup(buttons)
+
+    # Send sticker and delete after 1 second
+    m = await message.reply_sticker("CAACAgUAAxkBAAIGBGaIQ3GTvjPRwI1B_lFMKU-SFBSqAAIhAAPBJDExrJTo8r6ffCUeBA")
+    await asyncio.sleep(1)
+    await m.delete()
+
+    # Send photo message with caption and buttons
+    await message.reply_photo(
+        photo=random.choice(PICS),
+        caption=script.START_TXT2.format(message.from_user.mention, temp.U_NAME, temp.B_NAME),
+        reply_markup=reply_markup,
+        parse_mode='HTML'
+    )
+
+    return
+    
+    
+
 async def is_subscribed(bot, query):
     if REQUEST_TO_JOIN_MODE == True and join_db().isActive():
         try:
@@ -69,6 +102,7 @@ async def is_subscribed(bot, query):
             if user and user["user_id"] == query.from_user.id:
                 return True
             else:
+            
                 try:
                     user_data = await bot.get_chat_member(AUTH_CHANNEL, query.from_user.id)
                 except UserNotParticipant:
