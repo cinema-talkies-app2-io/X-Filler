@@ -508,8 +508,8 @@ async def start(client, message):
                         InlineKeyboardButton("Verify", url=await get_token(client, message.from_user.id, f"https://telegram.me/{temp.U_NAME}?start=")),
                     
                         InlineKeyboardButton("How To Verify", url=VERIFY_TUTORIAL)
-                    ],[
-                        InlineKeyboardButton("Get free subscription", url=await client.send_message(text="<b>hello</b>"))
+                 #   ],[
+                      #  InlineKeyboardButton("Get free subscription", url=await client.send_message(text="<b>hello</b>"))
                     ]]
                     await message.reply_text(
                         text="<b>Yᴏᴜʀ ᴛᴏᴋᴇɴ ɪs ᴇxᴘɪʀᴇᴅ, Vᴇʀɪғʏ ʏᴏᴜʀ ᴛᴏᴋᴇɴ ᴀɴᴅ ᴛʀʏ ᴀɢᴀɪɴ. \n\nTᴏᴋᴇɴ Tɪᴍᴇᴏᴜᴛ: 1 ᴡᴇᴇᴋ</b>",
@@ -583,8 +583,8 @@ async def start(client, message):
                         InlineKeyboardButton("Verify", url=await get_token(client, message.from_user.id, f"https://telegram.me/{temp.U_NAME}?start=")),
                     
                         InlineKeyboardButton("How To Verify", url=VERIFY_TUTORIAL)
-                    ],[
-                        InlineKeyboardButton("Get free subscription", url=await client.send_message(text="<b>hello</b>"))
+                  #  ],[
+                      #  InlineKeyboardButton("Get free subscription", url=await client.send_message(text="<b>hello</b>"))
                     ]]
                     await message.reply_text(
                         text="<b>Yᴏᴜʀ ᴛᴏᴋᴇɴ ɪs ᴇxᴘɪʀᴇᴅ, Vᴇʀɪғʏ ʏᴏᴜʀ ᴛᴏᴋᴇɴ ᴀɴᴅ ᴛʀʏ ᴀɢᴀɪɴ.\n\n🌐 Bᴇᴛᴛᴇʀ ᴛᴏ ᴠᴇʀɪғʏ ɪɴ ᴄʜʀᴏᴍᴇ ʙʀᴏᴡsᴇʀ \n\nTᴏᴋᴇɴ Tɪᴍᴇᴏᴜᴛ: 1 ᴡᴇᴇᴋ</b>",
@@ -661,8 +661,8 @@ async def start(client, message):
                 InlineKeyboardButton("Verify", url=await get_token(client, message.from_user.id, f"https://telegram.me/{temp.U_NAME}?start=")),
                     
                         InlineKeyboardButton("How To Verify", url=VERIFY_TUTORIAL)
-                    ],[
-                        InlineKeyboardButton("Get free subscription", url=await client.send_message(text="<b>hello</b>"))
+                 #   ],[
+                        #InlineKeyboardButton("Get free subscription", url=await client.send_message(text="<b>hello</b>"))
                     ]]
             await message.reply_text(
                 text="<b>Yᴏᴜʀ ᴛᴏᴋᴇɴ ɪs ᴇxᴘɪʀᴇᴅ, Vᴇʀɪғʏ ʏᴏᴜʀ ᴛᴏᴋᴇɴ ᴀɴᴅ ᴛʀʏ ᴀɢᴀɪɴ.\n\n🌐 Bᴇᴛᴛᴇʀ ᴛᴏ ᴠᴇʀɪғʏ ɪɴ ᴄʜʀᴏᴍᴇ ʙʀᴏᴡsᴇʀ. \n\nTᴏᴋᴇɴ Tɪᴍᴇᴏᴜᴛ: 1 ᴡᴇᴇᴋ</b>",
