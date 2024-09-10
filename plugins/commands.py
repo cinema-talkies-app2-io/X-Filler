@@ -503,7 +503,7 @@ async def start(client, message):
                 f_caption = f"{' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@'), files1.file_name.split()))}"
             if not await db.has_premium_access(message.from_user.id):
                 if not await check_verification(client, message.from_user.id) and VERIFY == True:
-                    z=generate_referral_buttons(message, CHNL_LNK, PICS, script, temp)
+                    z=await generate_referral_buttons(message, CHNL_LNK, PICS, script, temp)
                     btn = [[
                         InlineKeyboardButton("Verify", url=await get_token(client, message.from_user.id, f"https://telegram.me/{temp.U_NAME}?start=")),
                     
@@ -578,7 +578,7 @@ async def start(client, message):
             
             if not await db.has_premium_access(message.from_user.id):
                 if not await check_verification(client, message.from_user.id) and VERIFY == True:
-                    z=generate_referral_buttons(message, CHNL_LNK, PICS, script, temp)
+                    z=await generate_referral_buttons(message, CHNL_LNK, PICS, script, temp)
                     btn = [[
                         InlineKeyboardButton("Verify", url=await get_token(client, message.from_user.id, f"https://telegram.me/{temp.U_NAME}?start=")),
                     
