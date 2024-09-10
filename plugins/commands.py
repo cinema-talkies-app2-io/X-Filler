@@ -21,7 +21,7 @@ join_db = JoinReqs
 
 @Client.on_message(filters.command("start"))
 async def start(client, message):
-    if len(message.command) > 1 and message.command[1] == "show_hello":
+    if len(message.command) > 1: #and message.command[1] == "show_hello":
         await message.reply_text("hello")
     else:
         # Handle other start commands
