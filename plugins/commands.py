@@ -40,8 +40,8 @@ async def start(client, message):
 async def start(client, message):
     # React with a thumbs up emoji
     await message.react(emoji="👍")
-    if len(message.command) != 2: #and message.command[1] == "show_hello":
-        await message.reply_text("hello")
+ #   if len(message.command) != 2: #and message.command[1] == "show_hello":
+       # await message.reply_text("hello")
    # else:
         # Handle other start commands
         #await message.reply_text("Welcome to the bot!")
@@ -112,7 +112,7 @@ async def start(client, message):
                  )
             return
     else:
-         await message.reply_text("Welcome to the bot!")
+       #  await message.reply_text("Welcome to the bot!")
     # Send welcome back message to an existing user
     
     # Send welcome back message to an existing user
