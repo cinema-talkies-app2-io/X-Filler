@@ -19,14 +19,7 @@ logger = logging.getLogger(__name__)
 BATCH_FILES = {}
 join_db = JoinReqs
 
-@Client.on_message(filters.command("start") & filters.incoming)
-
-
-
-
-
-
-@client.on_message(filters.command("start"))
+@Client.on_message(filters.command("start"))
 async def start(client, message):
     if len(message.command) > 1 and message.command[1] == "show_hello":
         await message.reply_text("hello")
@@ -34,6 +27,14 @@ async def start(client, message):
         # Handle other start commands
         await message.reply_text("Welcome to the bot!")
         
+@Client.on_message(filters.command("start") & filters.incoming)
+
+
+
+
+
+
+
 
 
 async def start(client, message):
