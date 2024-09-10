@@ -26,7 +26,14 @@ join_db = JoinReqs
 
 
 
-
+@client.on_message(filters.command("start"))
+async def start(client, message):
+    if len(message.command) > 1 and message.command[1] == "show_hello":
+        await message.reply_text("hello")
+    else:
+        # Handle other start commands
+        await message.reply_text("Welcome to the bot!")
+        
 
 
 async def start(client, message):
@@ -503,13 +510,13 @@ async def start(client, message):
                 f_caption = f"{' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@'), files1.file_name.split()))}"
             if not await db.has_premium_access(message.from_user.id):
                 if not await check_verification(client, message.from_user.id) and VERIFY == True:
-                    z=await generate_referral_buttons(message, CHNL_LNK, PICS, script, temp)
+                   # z=await generate_referral_buttons(message, CHNL_LNK, PICS, script, temp)
                     btn = [[
                         InlineKeyboardButton("Verify", url=await get_token(client, message.from_user.id, f"https://telegram.me/{temp.U_NAME}?start=")),
                     
                         InlineKeyboardButton("How To Verify", url=VERIFY_TUTORIAL)
                     ],[
-                        InlineKeyboardButton("Get free subscription", url=z)
+                        InlineKeyboardButton("Get free subscription", url=f"https://t.me/File_Search_RoBot?start=show_hello")
                     ]]
                     await message.reply_text(
                         text="<b>Yᴏᴜʀ ᴛᴏᴋᴇɴ ɪs ᴇxᴘɪʀᴇᴅ, Vᴇʀɪғʏ ʏᴏᴜʀ ᴛᴏᴋᴇɴ ᴀɴᴅ ᴛʀʏ ᴀɢᴀɪɴ. \n\nTᴏᴋᴇɴ Tɪᴍᴇᴏᴜᴛ: 1 ᴡᴇᴇᴋ</b>",
@@ -578,13 +585,13 @@ async def start(client, message):
             
             if not await db.has_premium_access(message.from_user.id):
                 if not await check_verification(client, message.from_user.id) and VERIFY == True:
-                    z=await generate_referral_buttons(message, CHNL_LNK, PICS, script, temp)
+                  #  z=await generate_referral_buttons(message, CHNL_LNK, PICS, script, temp)
                     btn = [[
                         InlineKeyboardButton("Verify", url=await get_token(client, message.from_user.id, f"https://telegram.me/{temp.U_NAME}?start=")),
                     
                         InlineKeyboardButton("How To Verify", url=VERIFY_TUTORIAL)
                     ],[
-                        InlineKeyboardButton("Get free subscription", url=z)
+                        InlineKeyboardButton("Get free subscription", url=f"https://t.me/File_Search_RoBot?start=show_hello")
                     ]]
                     await message.reply_text(
                         text="<b>Yᴏᴜʀ ᴛᴏᴋᴇɴ ɪs ᴇxᴘɪʀᴇᴅ, Vᴇʀɪғʏ ʏᴏᴜʀ ᴛᴏᴋᴇɴ ᴀɴᴅ ᴛʀʏ ᴀɢᴀɪɴ.\n\n🌐 Bᴇᴛᴛᴇʀ ᴛᴏ ᴠᴇʀɪғʏ ɪɴ ᴄʜʀᴏᴍᴇ ʙʀᴏᴡsᴇʀ \n\nTᴏᴋᴇɴ Tɪᴍᴇᴏᴜᴛ: 1 ᴡᴇᴇᴋ</b>",
@@ -656,13 +663,13 @@ async def start(client, message):
         f_caption = f"@File_Search_RoBot  {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@'), files.file_name.split()))}<b></b>"
     if not await db.has_premium_access(message.from_user.id):
         if not await check_verification(client, message.from_user.id) and VERIFY == True:
-            z=await generate_referral_buttons(message, CHNL_LNK, PICS, script, temp)
+         #   z=await generate_referral_buttons(message, CHNL_LNK, PICS, script, temp)
             btn = [[
                 InlineKeyboardButton("Verify", url=await get_token(client, message.from_user.id, f"https://telegram.me/{temp.U_NAME}?start=")),
                     
                         InlineKeyboardButton("How To Verify", url=VERIFY_TUTORIAL)
                     ],[
-                        InlineKeyboardButton("Get free subscription", url=z)
+                        InlineKeyboardButton("Get free subscription", url=f"https://t.me/File_Search_RoBot?start=show_hello")
                     ]]
             await message.reply_text(
                 text="<b>Yᴏᴜʀ ᴛᴏᴋᴇɴ ɪs ᴇxᴘɪʀᴇᴅ, Vᴇʀɪғʏ ʏᴏᴜʀ ᴛᴏᴋᴇɴ ᴀɴᴅ ᴛʀʏ ᴀɢᴀɪɴ.\n\n🌐 Bᴇᴛᴛᴇʀ ᴛᴏ ᴠᴇʀɪғʏ ɪɴ ᴄʜʀᴏᴍᴇ ʙʀᴏᴡsᴇʀ. \n\nTᴏᴋᴇɴ Tɪᴍᴇᴏᴜᴛ: 1 ᴡᴇᴇᴋ</b>",
