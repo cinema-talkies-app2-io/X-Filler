@@ -526,7 +526,7 @@ async def start(client, message):
                    
 
                     subscription_text = "Get free subscription"
-                    callback_data = "subscription"
+                    callback_data = "SUBSCRIPTION_TXT"
 
                     user_id = message.from_user.id
                    # z=await generate_referral_buttons(message, CHNL_LNK, PICS, script, temp)
@@ -608,7 +608,7 @@ async def start(client, message):
                                       <b>Fᴏʀ ғᴜʟʟ ᴅᴇᴛᴀɪʟs /start ᴛʜᴇ ʙᴏᴛ
                                       </b>"""
                     subscription_text = "Get free subscription"
-                    callback_data = "subscription"
+                    callback_data = "SUBSCRIPTION_TXT"
                     user_id = message.from_user.id
                   #  z=await generate_referral_buttons(message, CHNL_LNK, PICS, script, temp)
                     btn = [[
@@ -692,7 +692,7 @@ async def start(client, message):
                                  <b>Fᴏʀ ғᴜʟʟ ᴅᴇᴛᴀɪʟs /start ᴛʜᴇ ʙᴏᴛ
                                    </b>"""
             subscription_text = "Get free subscription"
-            callback_data = "subscription"
+            callback_data = "SUBSCRIPTION_TXT"
             user_id = message.from_user.id
          #   z=await generate_referral_buttons(message, CHNL_LNK, PICS, script, temp)
             btn = [[
