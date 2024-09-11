@@ -520,13 +520,10 @@ async def start(client, message):
                 f_caption = f"{' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@'), files1.file_name.split()))}"
             if not await db.has_premium_access(message.from_user.id):
                 if not await check_verification(client, message.from_user.id) and VERIFY == True:
-                    SUBSCRIPTION_TXT = """
-                                      <b>Fᴏʀ ғᴜʟʟ ᴅᴇᴛᴀɪʟs /start ᴛʜᴇ ʙᴏᴛ
-                                      </b>"""
-                   
+                    
 
-                    subscription_text = "Get free subscription"
-                    callback_data = "SUBSCRIPTION_TXT"
+                    subscription_text = "💳 Get free subscription 💳"
+                    callback_data = "https://t.me/AniMovieRulz/23"
 
                     user_id = message.from_user.id
                    # z=await generate_referral_buttons(message, CHNL_LNK, PICS, script, temp)
@@ -535,7 +532,7 @@ async def start(client, message):
                     
                         InlineKeyboardButton("How To Verify", url=VERIFY_TUTORIAL)
                     ],[
-                        InlineKeyboardButton(subscription_text, callback_data=callback_data)
+                        InlineKeyboardButton(subscription_text, url=callback_data)
                     ]]
                     await message.reply_text(
                         text="<b>Yᴏᴜʀ ᴛᴏᴋᴇɴ ɪs ᴇxᴘɪʀᴇᴅ, Vᴇʀɪғʏ ʏᴏᴜʀ ᴛᴏᴋᴇɴ ᴀɴᴅ ᴛʀʏ ᴀɢᴀɪɴ. \n\nTᴏᴋᴇɴ Tɪᴍᴇᴏᴜᴛ: 1 ᴡᴇᴇᴋ</b>",
@@ -604,11 +601,9 @@ async def start(client, message):
             
             if not await db.has_premium_access(message.from_user.id):
                 if not await check_verification(client, message.from_user.id) and VERIFY == True:
-                    SUBSCRIPTION_TXT = """
-                                      <b>Fᴏʀ ғᴜʟʟ ᴅᴇᴛᴀɪʟs /start ᴛʜᴇ ʙᴏᴛ
-                                      </b>"""
-                    subscription_text = "Get free subscription"
-                    callback_data = "SUBSCRIPTION_TXT"
+                    
+                    subscription_text = "💳 Get free subscription 💳"
+                    callback_data = "https://t.me/AniMovieRulz/23"
                     user_id = message.from_user.id
                   #  z=await generate_referral_buttons(message, CHNL_LNK, PICS, script, temp)
                     btn = [[
@@ -616,7 +611,7 @@ async def start(client, message):
                     
                         InlineKeyboardButton("How To Verify", url=VERIFY_TUTORIAL)
                     ],[
-                        InlineKeyboardButton(subscription_text, callback_data=callback_data)
+                        InlineKeyboardButton(subscription_text, url=callback_data)
                     ]]
                     await message.reply_text(
                         text="<b>Yᴏᴜʀ ᴛᴏᴋᴇɴ ɪs ᴇxᴘɪʀᴇᴅ, Vᴇʀɪғʏ ʏᴏᴜʀ ᴛᴏᴋᴇɴ ᴀɴᴅ ᴛʀʏ ᴀɢᴀɪɴ.\n\n🌐 Bᴇᴛᴛᴇʀ ᴛᴏ ᴠᴇʀɪғʏ ɪɴ ᴄʜʀᴏᴍᴇ ʙʀᴏᴡsᴇʀ \n\nTᴏᴋᴇɴ Tɪᴍᴇᴏᴜᴛ: 1 ᴡᴇᴇᴋ</b>",
@@ -688,11 +683,9 @@ async def start(client, message):
         f_caption = f"@File_Search_RoBot  {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@'), files.file_name.split()))}<b></b>"
     if not await db.has_premium_access(message.from_user.id):
         if not await check_verification(client, message.from_user.id) and VERIFY == True:
-            SUBSCRIPTION_TXT = """
-                                 <b>Fᴏʀ ғᴜʟʟ ᴅᴇᴛᴀɪʟs /start ᴛʜᴇ ʙᴏᴛ
-                                   </b>"""
-            subscription_text = "Get free subscription"
-            callback_data = "SUBSCRIPTION_TXT"
+            
+            subscription_text = "💳 Get free subscription 💳"
+            callback_data = "https://t.me/AniMovieRulz/23"
             user_id = message.from_user.id
          #   z=await generate_referral_buttons(message, CHNL_LNK, PICS, script, temp)
             btn = [[
@@ -700,7 +693,7 @@ async def start(client, message):
                     
                         InlineKeyboardButton("How To Verify", url=VERIFY_TUTORIAL)
                     ],[
-                        InlineKeyboardButton(subscription_text, callback_data=callback_data)
+                        InlineKeyboardButton(subscription_text, url=callback_data)
                     ]]
             await message.reply_text(
                 text="<b>Yᴏᴜʀ ᴛᴏᴋᴇɴ ɪs ᴇxᴘɪʀᴇᴅ, Vᴇʀɪғʏ ʏᴏᴜʀ ᴛᴏᴋᴇɴ ᴀɴᴅ ᴛʀʏ ᴀɢᴀɪɴ.\n\n🌐 Bᴇᴛᴛᴇʀ ᴛᴏ ᴠᴇʀɪғʏ ɪɴ ᴄʜʀᴏᴍᴇ ʙʀᴏᴡsᴇʀ. \n\nTᴏᴋᴇɴ Tɪᴍᴇᴏᴜᴛ: 1 ᴡᴇᴇᴋ</b>",
