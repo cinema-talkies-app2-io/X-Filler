@@ -452,14 +452,54 @@ async def start(client, message):
                 protect_content=True
             )
             await verify_user(client, userid, token)
+           #yfff
+            if STREAM_MODE == True:
+                button = [[
+                    
+                    InlineKeyboardButton('🚀 Fast Download / Watch Online 🖥️', callback_data=f'generate_stream_link:{file_id}') #Don't change anything without contacting me @KingVJ01
+                ]]
+            else:
+                button = [[
+                    InlineKeyboardButton('✇ Jᴏɪɴ Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ ✇', url=CHNL_LNK)
+                ]]
             msg = await client.send_cached_media(
                 chat_id=message.from_user.id,
                 file_id=file_id,
-                caption=f_caption,
                 protect_content=True if pre == 'filep' else False,
                 reply_markup=InlineKeyboardMarkup(button)
             )
-            filesarr.append(msg)
+            filetype = msg.media
+            file = getattr(msg, filetype.value)
+            title = f"@File_Search_RoBot  {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@'), files.file_name.split()))}<b></b>"
+            size=get_size(file.file_size)
+            f_caption = f"<code>{title}</code>"
+            if CUSTOM_FILE_CAPTION:
+                try:
+                    f_caption=CUSTOM_FILE_CAPTION.format(file_name= '' if title is None else title, file_size='' if size is None else size, file_caption='')
+                except:
+                    return
+            await msg.edit_caption(
+                caption=f_caption,
+                reply_markup=InlineKeyboardMarkup(button)
+            )
+            btn = [[
+                InlineKeyboardButton("Get File Again", callback_data=f'delfile#{file_id}')
+            ]]
+            await asyncio.sleep(604800)
+            await msg.delete()
+
+            # Send a new message indicating the file is deleted
+            await message.reply_text(
+              text = f"➠ Yᴏᴜʀ ғɪʟᴇ ʜᴀs ʙᴇᴇɴ ᴅᴇʟᴇᴛᴇᴅ ᴛᴏ ᴀᴠᴏɪᴅ ᴄᴏᴘʏʀɪɢʜᴛ ɪssᴜᴇs 🍃🗑️\n\n<b><u>Fɪʟᴇ ɴᴀᴍᴇ</u> : <code>{files.file_name}</code></b>",
+       
+              reply_markup=InlineKeyboardMarkup(btn)
+            )
+           
+
+          
+            await k.edit_text("<b>Your File/Video is successfully deleted!!!\n\nClick below button to get your deleted file 👇</b>",reply_markup=InlineKeyboardMarkup(btn))
+            return
+           #ygff
         else:
             return await message.reply_text(
                 text="<b>Invalid link or Expired link !</b>",
