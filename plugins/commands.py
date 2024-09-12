@@ -320,7 +320,7 @@ async def start(client, message):
                         reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🚀 Fast Download 🚀", url=download),  # we download Link
                                                             InlineKeyboardButton('🖥️ Watch online 🖥️', url=stream)]])  # web stream Link
                     )
-                    await asyncio.sleep(600)
+                    await asyncio.sleep(86400)
 
 # Delete the log message
                     await log_msg.delete()
@@ -662,7 +662,7 @@ async def start(client, message):
             btn = [[
                 InlineKeyboardButton("Get File Again", callback_data=f'delfile#{file_id}')
             ]]
-            await asyncio.sleep(900)
+            await asyncio.sleep(518400)
             await msg.delete()
 
             # Send a new message indicating the file is deleted
@@ -730,7 +730,7 @@ async def start(client, message):
     btn = [[
         InlineKeyboardButton("Get File Again", callback_data=f'delfile#{file_id}')
     ]]
-    await asyncio.sleep(600)
+    await asyncio.sleep(518400)
     await msg.delete()
     # Send a new message indicating the file is deleted
     await message.reply_text(
