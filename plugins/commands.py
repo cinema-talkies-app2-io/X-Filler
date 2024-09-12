@@ -447,12 +447,13 @@ async def start(client, message):
             )
         is_valid = await check_token(client, userid, token)
         if is_valid == True:
-            await message.reply_text(text=f"<b>ʜᴇʏ {user} 😍 ,You are successfully verified !\nNow you have unlimited access for all movies for 1 week ✅.</b>", reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("📝 ʀᴇǫᴜᴇsᴛ ʜᴇʀᴇ ", url=f"https://t.me/+K9wdpqiSRXQ2NWY1")]]))
+           # await message.reply_text(text=f"<b>ʜᴇʏ {user} 😍 ,You are successfully verified !\nNow you have unlimited access for all movies for 1 week ✅.</b>", reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("📝 ʀᴇǫᴜᴇsᴛ ʜᴇʀᴇ ", url=f"https://t.me/+K9wdpqiSRXQ2NWY1")]]))
                     
-           # await message.reply_text(
-              #  text=f"<b>Hey {message.from_user.mention}, You are successfully verified !\nNow you have unlimited access for all movies for 1 week ✅.</b>",
-             #   protect_content=True
-        #    )
+            await message.reply_text(
+                text=f"<b>Hey {message.from_user.mention}, You are successfully verified !\nNow you have unlimited access for all movies for 1 week ✅.</b>",
+                protect_content=True,reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("📝 ʀᴇǫᴜᴇsᴛ ʜᴇʀᴇ ", url=f"https://t.me/+K9wdpqiSRXQ2NWY1")]]))
+            
+            
             await verify_user(client, userid, token)
            #yfff
             
