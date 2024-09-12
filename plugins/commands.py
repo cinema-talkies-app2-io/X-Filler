@@ -451,7 +451,7 @@ async def start(client, message):
                     
             await message.reply_text(
                 text=f"<b>Hey {message.from_user.mention}, You are successfully verified !\nNow you have unlimited access for all movies for 1 week ✅.</b>",
-                protect_content=True,reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("📝 ʀᴇǫᴜᴇsᴛ ʜᴇʀᴇ ", url=f"https://t.me/+K9wdpqiSRXQ2NWY1")]]))
+                protect_content=True,reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("📝 ʀᴇǫᴜᴇsᴛ ɴᴏᴡ", url=f"https://t.me/+K9wdpqiSRXQ2NWY1")]]))
             
             
             await verify_user(client, userid, token)
@@ -563,7 +563,7 @@ async def start(client, message):
                 reply_markup=InlineKeyboardMarkup(button)
             )
             filesarr.append(msg)
-        await asyncio.sleep(604600)
+        await asyncio.sleep(900)
         for x in filesarr:
             await x.delete()
         await k.edit_text("<b>Your All Files/Videos is successfully deleted!!!</b>")
@@ -658,7 +658,7 @@ async def start(client, message):
             btn = [[
                 InlineKeyboardButton("Get File Again", callback_data=f'delfile#{file_id}')
             ]]
-            await asyncio.sleep(604800)
+            await asyncio.sleep(900)
             await msg.delete()
 
             # Send a new message indicating the file is deleted
@@ -726,7 +726,7 @@ async def start(client, message):
     btn = [[
         InlineKeyboardButton("Get File Again", callback_data=f'delfile#{file_id}')
     ]]
-    await asyncio.sleep(604800)
+    await asyncio.sleep(600)
     await msg.delete()
     # Send a new message indicating the file is deleted
     await message.reply_text(
