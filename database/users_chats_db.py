@@ -104,9 +104,26 @@ class Database:
         user = self.new_user(id, name)
         await self.col.insert_one(user)
 
+#    from pymongo.errors import DuplicateKeyError
+#import datetime
+
     async def add_userz(self, id, name):
-        user = self.new_user(id, name)
-        await self.userz_col.insert_one(user)
+        user = self.new_user1(id, name)
+    
+        try:
+        # Try inserting the new user
+            await self.userz_col.insert_one(user)
+        except DuplicateKeyError:
+        # Handle if the user already exists
+            pass  # You can handle this with a return message or status if needed
+
+    async def new_user1(self, id, name):
+    return {
+        "_id": id,  # Make sure '_id' is unique
+        "name": name,
+        "created_at": datetime.datetime.utcnow(),  # Optional timestamp
+    }
+    
     
     async def is_user_exist(self, id):
         user = await self.col.find_one({'id':int(id)})
