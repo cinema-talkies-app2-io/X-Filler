@@ -259,8 +259,8 @@ async def start(client, message):
                         await client.send_message(chat_id=user_id, text=f"<b>You Have Successfully Completed Total Referral.\n\nYou Are Added To Premium For {REFERAL_PREMEIUM_TIME}</b>")
                         return
         else:
-             await message.reply("<b>You have already registered </b>")
-             return
+            await message.reply("<b>You have already registered </b>")
+            return
 
         
     try:
