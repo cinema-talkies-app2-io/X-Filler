@@ -234,7 +234,7 @@ async def start(client, message):
         # Notify the user that they have already referred
             await message.reply("<b>You have already registered </b>")
             return
-        else:
+        if not user_exists:
              vj = await referal_add_user(user_id, message.from_user.id)
         
              if vj and PREMIUM_AND_REFERAL_MODE == True:
