@@ -117,12 +117,12 @@ class Database:
         # Handle if the user already exists
             pass  # You can handle this with a return message or status if needed
 
-    async def new_user1(self, id, name):
-    return {
-        "_id": id,  # Make sure '_id' is unique
-        "name": name,
-        "created_at": datetime.datetime.utcnow(),  # Optional timestamp
-    }
+    def new_user1(self, id, name):
+        return {
+            "_id": id,  # Make sure '_id' is unique
+            "name": name,
+       #     "created_at": datetime.datetime.utcnow(),  # Optional timestamp
+        }
     
     
     async def is_user_exist(self, id):
