@@ -235,28 +235,28 @@ async def start(client, message):
             await message.reply("<b>You have already registered </b>")
             return
         if not user_exists:
-             vj = await referal_add_user(user_id, message.from_user.id)
+            vj = await referal_add_user(user_id, message.from_user.id)
         
-             if vj and PREMIUM_AND_REFERAL_MODE == True:
-                 await message.reply(f"<b>You have joined using the referral link of user with ID {user_id}\n\nSend /start again to use the bot</b>")
-                 await db.add_userz(message.from_user.id, message.from_user.first_name)
+            if vj and PREMIUM_AND_REFERAL_MODE == True:
+                await message.reply(f"<b>You have joined using the referral link of user with ID {user_id}\n\nSend /start again to use the bot</b>")
+                await db.add_userz(message.from_user.id, message.from_user.first_name)
         # Process the referral
              
-                 num_referrals = await get_referal_users_count(user_id)
-                 await client.send_message(chat_id=user_id, text=f"<b>{message.from_user.mention} started the bot with your referral link\n\nTotal Referrals - {num_referrals}</b>")
-                 await client.send_message(LOG_CHANNEL, script.LOG_TEXT_X.format(message.from_user.id, message.from_user.mention))
-    
-                 if num_referrals == REFERAL_COUNT:
-                     time = REFERAL_PREMEIUM_TIME
-                     seconds = await get_seconds(time)
-                
-                     if seconds > 0:
-                         expiry_time = datetime.datetime.now() + datetime.timedelta(seconds=seconds)
-                         user_data = {"id": user_id, "expiry_time": expiry_time}
-                         await db.update_user(user_data)  # Use the update_user method to update or insert user data
-                         await delete_all_referal_users(user_id)
-                         await client.send_message(chat_id=user_id, text=f"<b>You Have Successfully Completed Total Referral.\n\nYou Are Added To Premium For {REFERAL_PREMEIUM_TIME}</b>")
-                         return
+                num_referrals = await get_referal_users_count(user_id)
+                await client.send_message(chat_id=user_id, text=f"<b>{message.from_user.mention} started the bot with your referral link\n\nTotal Referrals - {num_referrals}</b>")
+                await client.send_message(LOG_CHANNEL, script.LOG_TEXT_X.format(message.from_user.id, message.from_user.mention))
+   
+                if num_referrals == REFERAL_COUNT:
+                    time = REFERAL_PREMEIUM_TIME
+                    seconds = await get_seconds(time)
+               
+                    if seconds > 0:
+                        expiry_time = datetime.datetime.now() + datetime.timedelta(seconds=seconds)
+                        user_data = {"id": user_id, "expiry_time": expiry_time}
+                        await db.update_user(user_data)  # Use the update_user method to update or insert user data
+                        await delete_all_referal_users(user_id)
+                        await client.send_message(chat_id=user_id, text=f"<b>You Have Successfully Completed Total Referral.\n\nYou Are Added To Premium For {REFERAL_PREMEIUM_TIME}</b>")
+                        return
 
         
     try:
