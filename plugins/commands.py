@@ -240,13 +240,14 @@ async def start(client, message):
             if vj and PREMIUM_AND_REFERAL_MODE == True:
                # if not await db.is_userz_exist(user_id):
                 await message.reply(f"<b>You have joined using the referral link of user with ID {user_id}\n\nSend /start again to use the bot</b>")
-                await db.add_userz(message.from_user.id, message.from_user.first_name)
+                
         # Process the referral
              
                 num_referrals = await get_referal_users_count(user_id)
                 await client.send_message(chat_id=user_id, text=f"<b>{message.from_user.mention} started the bot with your referral link\n\nTotal Referrals - {num_referrals}</b>")
+                await db.add_userz(message.from_user.id, message.from_user.first_name)
                 await client.send_message(LOG_CHANNEL, script.LOG_TEXT_X.format(message.from_user.id, message.from_user.mention))
-    
+                
                 if num_referrals == REFERAL_COUNT:
                     time = REFERAL_PREMEIUM_TIME
                     seconds = await get_seconds(time)
