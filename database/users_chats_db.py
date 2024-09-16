@@ -129,10 +129,15 @@ class Database:
         user = await self.col.find_one({'id':int(id)})
         return bool(user)
 
-    async def is_userz_exist(self, id):
-        user = await self.userz_col.find_one({'id':int(id)})
-        return bool(user)
-        
+ #   async def is_userz_exist(self, id):
+    #    user = await self.userz_col.find_one({'id':int(id)})
+   #     return bool(user)
+
+    async def is_userz_exist(self, user_id):
+    # Check if user with given user_id exists in the collection
+        user = await self.userz_col.find_one({"_id": user_id})
+        return user is not None
+    
     async def total_users_count(self):
         count = await self.col.count_documents({})
         return count
