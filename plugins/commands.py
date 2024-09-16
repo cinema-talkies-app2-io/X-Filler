@@ -228,7 +228,7 @@ async def start(client, message):
         user_id = int(data.split("-", 1)[1])
 
     # Check if the referring user is already in the database
-        user_exists = await db.is_userz_exist(user_id)
+        user_exists = await db.is_userz_exist(message.from_user.id)
     
         if not user_exists:
         # Notify the user that they have already referred
