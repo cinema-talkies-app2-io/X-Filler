@@ -20,7 +20,7 @@ def is_enabled(value, default):
 SESSION = environ.get('SESSION', 'TechVJBot')
 API_ID = int(environ.get('API_ID', '21661450'))
 API_HASH = environ.get('API_HASH', '79612bc71908f95372808520a7eeee74')
-BOT_TOKEN = environ.get('BOT_TOKEN', "7430002258:AAFn8t3d6ywm55UhLJACW0_3wL2I7X7BzPM")
+BOT_TOKEN = environ.get('BOT_TOKEN', "7727828259:AAFJuTYqiqruK2jetQ_D_NqIqW_oUfqYIo8")
 
 # Bot settings
 CACHE_TIME = int(environ.get('CACHE_TIME', 1800))
