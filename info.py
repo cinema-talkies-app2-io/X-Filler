@@ -20,7 +20,7 @@ def is_enabled(value, default):
 SESSION = environ.get('SESSION', 'TechVJBot')
 API_ID = int(environ.get('API_ID', '21661450'))
 API_HASH = environ.get('API_HASH', '79612bc71908f95372808520a7eeee74')
-BOT_TOKEN = environ.get('BOT_TOKEN', "7430002258:AAHQccFtofmKuEA3fEj88PAmA6k5ZK5dw7Y")
+BOT_TOKEN = environ.get('BOT_TOKEN', "7925069254:AAGj0dAU6yb4wal6KG2-L26Q5hi92CmH3BQ")
 
 # Bot settings
 CACHE_TIME = int(environ.get('CACHE_TIME', 1800))
@@ -91,7 +91,7 @@ NO_RESULTS_MSG = bool(environ.get("NO_RESULTS_MSG", False))
 USE_CAPTION_FILTER = bool(environ.get('USE_CAPTION_FILTER', True))
 
 # Token Verification Info :
-VERIFY = bool(environ.get('VERIFY', False))
+VERIFY = bool(environ.get('VERIFY', True))
 VERIFY_SECOND_SHORTNER = bool(environ.get('VERIFY_SECOND_SHORTNER', False))
 VERIFY_SHORTLINK_URL = environ.get('VERIFY_SHORTLINK_URL', 'gplinks.com')
 VERIFY_SHORTLINK_API = environ.get('VERIFY_SHORTLINK_API', 'e5bf7301b4ad442d45481de99fd656a182ec6507')
